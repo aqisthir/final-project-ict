@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICT Final Project — Panduan Kelas 9 SMP</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #f5f4ef;
+    --bg2:      #eceae2;
+    --white:    #ffffff;
+    --ink:      #1a1814;
+    --ink2:     #3d3a33;
+    --ink3:     #7a7568;
+    --ink4:     #b5b0a4;
+    --red:      #e84040;
+    --orange:   #f07820;
+    --green:    #2a9d6a;
+    --blue:     #2563eb;
+    --yellow:   #f5c840;
+    --border:   #dedad2;
+    --font:     'Plus Jakarta Sans', sans-serif;
+    --mono:     'Fira Code', monospace;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 0 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 58px;
+    border-bottom: 3px solid var(--yellow);
+  }
+
+  .header-logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--yellow);
+  }
+
+  .header-nav {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+  }
+
+  .header-nav a {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(245,244,239,0.6);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: all 0.15s;
+  }
+
+  .header-nav a:hover {
+    color: var(--bg);
+    background: rgba(255,255,255,0.1);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: 'ICT';
+    position: absolute;
+    right: -20px;
+    bottom: -60px;
+    font-family: var(--font);
+    font-weight: 800;
+    font-size: 280px;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    pointer-events: none;
+    letter-spacing: -0.05em;
+  }
+
+  .hero-kelas {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--yellow);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+  }
+
+  .hero-title {
+    font-size: clamp(42px, 6vw, 76px);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    max-width: 700px;
+    margin-bottom: 24px;
+  }
+
+  .hero-title em {
+    font-style: normal;
+    color: var(--yellow);
+  }
+
+  .hero-desc {
+    font-size: 17px;
+    color: rgba(245,244,239,0.65);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 44px;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .stat-num {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--yellow);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: rgba(245,244,239,0.5);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── MAIN LAYOUT ── */
+  main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 60px 48px 100px;
+  }
+
+  /* ── SECTION HEADING ── */
+  .sec-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .sec-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--ink);
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+
+  .sec-title {
+    font-size: clamp(26px, 3.5vw, 38px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+
+  .sec-subtitle {
+    font-size: 14px;
+    color: var(--ink3);
+    margin-top: 4px;
+  }
+
+  /* ── MENU GRID ── */
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 14px;
+    margin-bottom: 72px;
+  }
+
+  .menu-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 22px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .menu-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(26,24,20,0.1);
+  }
+
+  .menu-card-icon {
+    font-size: 30px;
+    margin-bottom: 12px;
+    line-height: 1;
+  }
+
+  .menu-card-num {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--ink4);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .menu-card-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  /* ── CONTENT BLOCK ── */
+  .content-block {
+    margin-bottom: 72px;
+  }
+
+  /* ── WAJIB BOX ── */
+  .wajib-box {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  .wajib-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .wajib-header-icon {
+    font-size: 20px;
+  }
+
+  .wajib-header-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink2);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .wajib-badge {
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+
+  .badge-wajib { background: #fee2e2; color: var(--red); }
+  .badge-plus  { background: #fef3c7; color: #b45309; }
+
+  .wajib-list {
+    list-style: none;
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .wajib-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--ink2);
+    line-height: 1.5;
+  }
+
+  .check-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+    margin-top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+  }
+
+  /* ── LEVEL CARD ── */
+  .level-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .level-card-top {
+    padding: 28px 32px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .level-emoji {
+    font-size: 36px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .level-card-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .c-red    { color: var(--red); }
+  .c-orange { color: var(--orange); }
+  .c-blue   { color: var(--blue); }
+  .c-green  { color: var(--green); }
+
+  .level-card-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+
+  .level-card-body {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .level-col {
+    padding: 22px 32px;
+  }
+
+  .level-col:first-child {
+    border-right: 1px solid var(--border);
+  }
+
+  .col-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .req-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .req-list li {
+    font-size: 13.5px;
+    color: var(--ink2);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+  }
+
+  .bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  .b-red    { background: var(--red); }
+  .b-orange { background: var(--orange); }
+  .b-blue   { background: var(--blue); }
+  .b-green  { background: var(--green); }
+  .b-ink    { background: var(--ink3); }
+
+  /* ── PLUS BOX ── */
+  .plus-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 20px 32px;
+    background: #fffbeb;
+    border-top: 1px solid #fde68a;
+  }
+
+  .plus-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: #92400e;
+  }
+
+  .star-icon { flex-shrink: 0; margin-top: 1px; }
+
+  /* ── CATATAN ── */
+  .catatan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+    margin-top: 4px;
+  }
+
+  .catatan-item {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .catatan-num {
+    font-family: var(--mono);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink4);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 32px;
+  }
+
+  .catatan-text {
+    font-size: 13.5px;
+    color: var(--ink2);
+    line-height: 1.6;
+  }
+
+  /* ── NILAI TAMBAHAN ── */
+  .nilai-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 4px;
+  }
+
+  .nilai-item {
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: 12px;
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.2s;
+  }
+
+  .nilai-item:hover { transform: scale(1.02); }
+
+  .nilai-icon { font-size: 26px; }
+
+  .nilai-text {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--bg);
+  }
+
+  /* ── DIVIDER ── */
+  hr {
+    border: none;
+    border-top: 2px solid var(--border);
+    margin: 60px 0;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(245,244,239,0.45);
+    text-align: center;
+    padding: 28px;
+    font-size: 12px;
+    font-family: var(--mono);
+    letter-spacing: 0.06em;
+  }
+
+  footer strong { color: var(--yellow); }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 720px) {
+    header { padding: 0 20px; }
+    .hero { padding: 56px 20px 52px; }
+    main { padding: 40px 20px 80px; }
+    .level-card-body { grid-template-columns: 1fr; }
+    .level-col:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    .plus-row { grid-template-columns: 1fr; }
+    .header-nav { display: none; }
+    .hero-stats { gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-logo">ICT Final Project</div>
+  <ul class="header-nav">
+    <li><a href="#struktur">Struktur</a></li>
+    <li><a href="#level7">Level 7</a></li>
+    <li><a href="#level8">Level 8</a></li>
+    <li><a href="#level9">Level 9</a></li>
+    <li><a href="#aboutme">About Me</a></li>
+    <li><a href="#catatan">Catatan</a></li>
+    <li><a href="#nilai">Penilaian</a></li>
+  </ul>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-kelas">📋 Panduan Tugas Akhir</div>
+  <h1 class="hero-title">ICT Final Project<br><em>Kelas 9 SMP</em></h1>
+  <p class="hero-desc">Panduan lengkap pembuatan <strong style="color:#f5f4ef">Portofolio Website</strong> sebagai tugas akhir ICT. Baca seluruh ketentuan sebelum memulai.</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">5</span>
+      <span class="stat-label">Halaman / Menu</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">3</span>
+      <span class="stat-label">Level Project</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">5</span>
+      <span class="stat-label">Kriteria Nilai Plus</span>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main>
+
+  <!-- STRUKTUR WEBSITE -->
+  <div id="struktur" class="content-block reveal">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <div>
+        <h2 class="sec-title">🌐 Struktur Website</h2>
+        <p class="sec-subtitle">Website harus memiliki minimal 5 halaman/menu berikut.</p>
+      </div>
+    </div>
+
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-card-icon">🏠</div>
+        <div class="menu-card-num">Menu 1</div>
+        <div class="menu-card-name">Home</div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-icon">👤</div>
+        <div class="menu-card-num">Menu 2</div>
+        <div class="menu-card-name">Identitas</div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-icon">🎮</div>
+        <div class="menu-card-num">Menu 3</div>
+        <div class="menu-card-name">Project Level 7 — Game</div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-icon">🚗</div>
+        <div class="menu-card-num">Menu 4</div>
+        <div class="menu-card-name">Project Level 8 — IoT</div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-icon">💻</div>
+        <div class="menu-card-num">Menu 5</div>
+        <div class="menu-card-name">Project Level 9 — Website</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOME -->
+  <div class="content-block reveal">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <div>
+        <h2 class="sec-title">🏠 Halaman Home</h2>
+        <p class="sec-subtitle">Halaman pertama yang dilihat pengunjung.</p>
+      </div>
+    </div>
+
+    <div class="wajib-box">
+      <div class="wajib-header">
+        <span class="wajib-header-icon">✅</span>
+        <span class="wajib-header-title">Wajib Ada</span>
+        <span class="wajib-badge badge-wajib">Wajib</span>
+      </div>
+      <ul class="wajib-list">
+        <li><span class="check-dot">·</span> Nama lengkap</li>
+        <li><span class="check-dot">·</span> Kelas</li>
+        <li><span class="check-dot">·</span> Judul website (contoh: <em>Project Collection</em>)</li>
+        <li><span class="check-dot">·</span> Deskripsi singkat (2–3 kalimat tentang isi web)</li>
+      </ul>
+    </div>
+
+    <div class="wajib-box" style="background:#f0fdf4; border-color:#bbf7d0;">
+      <div class="wajib-header" style="border-color:#bbf7d0;">
+        <span class="wajib-header-icon">💡</span>
+        <span class="wajib-header-title">Contoh Isi Deskripsi</span>
+      </div>
+      <ul class="wajib-list">
+        <li><span class="check-dot" style="border-color:#86efac;"></span> <em style="color:var(--ink3);">"Website ini berisi kumpulan proyek ICT saya dari kelas 7 sampai 9, meliputi game, IoT, dan website."</em></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- LEVEL 7 -->
+  <div id="level7" class="content-block reveal">
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <div>
+        <h2 class="sec-title">🎮 Project Level 7 — Game</h2>
+        <p class="sec-subtitle">Game buatan Construct 3</p>
+      </div>
+    </div>
+
+    <div class="level-card">
+      <div class="level-card-top">
+        <div class="level-emoji">🎮</div>
+        <div>
+          <div class="level-card-label c-red">Construct 3 — Kelas 7</div>
+          <div class="level-card-title">Project Game</div>
+        </div>
+      </div>
+      <div class="level-card-body">
+        <div class="level-col">
+          <div class="col-title"><span>✅</span> Wajib Ada</div>
+          <ul class="req-list">
+            <li><span class="bullet b-red"></span> Judul game</li>
+            <li><span class="bullet b-red"></span> Screenshot game</li>
+            <li><span class="bullet b-red"></span> Deskripsi game</li>
+            <li><span class="bullet b-red"></span> Cara bermain</li>
+            <li><span class="bullet b-red"></span> Link publish game</li>
+          </ul>
+        </div>
+        <div class="level-col">
+          <div class="col-title"><span>📌</span> Minimal Penjelasan</div>
+          <ul class="req-list">
+            <li><span class="bullet b-ink"></span> Tujuan game</li>
+            <li><span class="bullet b-ink"></span> Cara kontrol (keyboard / mouse)</li>
+            <li><span class="bullet b-ink"></span> Aturan menang / kalah</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 8 -->
+  <div id="level8" class="content-block reveal">
+    <div class="sec-head">
+      <span class="sec-num">04</span>
+      <div>
+        <h2 class="sec-title">🚗 Project Level 8 — IoT</h2>
+        <p class="sec-subtitle">Proyek Mobil RC</p>
+      </div>
+    </div>
+
+    <div class="level-card">
+      <div class="level-card-top">
+        <div class="level-emoji">🚗</div>
+        <div>
+          <div class="level-card-label c-orange">IoT — Kelas 8</div>
+          <div class="level-card-title">Mobil RC</div>
+        </div>
+      </div>
+      <div class="level-card-body">
+        <div class="level-col">
+          <div class="col-title"><span>✅</span> Wajib Ada</div>
+          <ul class="req-list">
+            <li><span class="bullet b-orange"></span> Nama proyek</li>
+            <li><span class="bullet b-orange"></span> Foto alat</li>
+            <li><span class="bullet b-orange"></span> Deskripsi fungsi</li>
+          </ul>
+          <br>
+          <div class="col-title"><span>📌</span> Penjelasan Wajib</div>
+          <ul class="req-list">
+            <li><span class="bullet b-ink"></span> Cara kerja mobil RC</li>
+            <li><span class="bullet b-ink"></span> Komponen utama (motor, baterai, controller, dll.)</li>
+            <li><span class="bullet b-ink"></span> Cara mengontrol</li>
+          </ul>
+        </div>
+        <div class="level-col">
+          <div class="col-title"><span>⭐</span> Nilai Tambahan</div>
+          <ul class="req-list">
+            <li><span class="bullet" style="background:var(--yellow);"></span> Video saat mobil berjalan</li>
+            <li><span class="bullet" style="background:var(--yellow);"></span> Diagram sederhana rangkaian</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 9 -->
+  <div id="level9" class="content-block reveal">
+    <div class="sec-head">
+      <span class="sec-num">05</span>
+      <div>
+        <h2 class="sec-title">💻 Project Level 9 — Website</h2>
+        <p class="sec-subtitle">Website buatan sendiri menggunakan HTML, CSS, JavaScript</p>
+      </div>
+    </div>
+
+    <div class="level-card">
+      <div class="level-card-top">
+        <div class="level-emoji">💻</div>
+        <div>
+          <div class="level-card-label c-blue">HTML / CSS / JS — Kelas 9</div>
+          <div class="level-card-title">Project Website</div>
+        </div>
+      </div>
+      <div class="level-card-body">
+        <div class="level-col">
+          <div class="col-title"><span>✅</span> Wajib Ada</div>
+          <ul class="req-list">
+            <li><span class="bullet b-blue"></span> Judul website</li>
+            <li><span class="bullet b-blue"></span> Screenshot tampilan</li>
+            <li><span class="bullet b-blue"></span> Deskripsi tujuan website</li>
+          </ul>
+          <br>
+          <div class="col-title"><span>📌</span> Penjelasan Wajib</div>
+          <ul class="req-list">
+            <li><span class="bullet b-ink"></span> Fitur yang dibuat (form, navbar, dll.)</li>
+            <li><span class="bullet b-ink"></span> Teknologi yang digunakan: HTML, CSS, JavaScript</li>
+          </ul>
+        </div>
+        <div class="level-col">
+          <div class="col-title"><span>⭐</span> Nilai Tambahan</div>
+          <ul class="req-list">
+            <li><span class="bullet" style="background:var(--yellow);"></span> Link hosting (Vercel / Netlify)</li>
+            <li><span class="bullet" style="background:var(--yellow);"></span> Penjelasan bagian kode sederhana</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT ME -->
+  <div id="aboutme" class="content-block reveal">
+    <div class="sec-head">
+      <span class="sec-num">06</span>
+      <div>
+        <h2 class="sec-title">👤 About Me</h2>
+        <p class="sec-subtitle">Halaman perkenalan diri</p>
+      </div>
+    </div>
+
+    <div class="level-card">
+      <div class="level-card-top">
+        <div class="level-emoji">👤</div>
+        <div>
+          <div class="level-card-label c-green">Identitas Diri</div>
+          <div class="level-card-title">Tentang Saya</div>
+        </div>
+      </div>
+      <div class="level-card-body">
+        <div class="level-col">
+          <div class="col-title"><span>✅</span> Wajib Ada</div>
+          <ul class="req-list">
+            <li><span class="bullet b-green"></span> Nama</li>
+            <li><span class="bullet b-green"></span> Kelas</li>
+            <li><span class="bullet b-green"></span> Foto (opsional, tapi disarankan)</li>
+          </ul>
+        </div>
+        <div class="level-col">
+          <div class="col-title"><span>📝</span> Isi Deskripsi</div>
+          <ul class="req-list">
+            <li><span class="bullet b-ink"></span> Minat (coding, desain, game, dll.)</li>
+            <li><span class="bullet b-ink"></span> Pengalaman selama belajar ICT</li>
+            <li><span class="bullet b-ink"></span> Kesan dan pesan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- CATATAN PENTING -->
+  <div id="catatan" class="content-block reveal">
+    <div class="sec-head">
+      <span class="sec-num">07</span>
+      <div>
+        <h2 class="sec-title">❗ Hal yang Perlu Diperhatikan</h2>
+        <p class="sec-subtitle">Baca dan pahami sebelum mengumpulkan.</p>
+      </div>
+    </div>
+
+    <div class="catatan-grid">
+      <div class="catatan-item">
+        <div class="catatan-num">01</div>
+        <p class="catatan-text">Gunakan referensi dari internet dengan bijak — <strong>jangan hanya menyalin tanpa memahami.</strong></p>
+      </div>
+      <div class="catatan-item">
+        <div class="catatan-num">02</div>
+        <p class="catatan-text">Pastikan website sudah <strong>lengkap</strong> dan tidak ada bagian yang kosong.</p>
+      </div>
+      <div class="catatan-item">
+        <div class="catatan-num">03</div>
+        <p class="catatan-text">Setiap anggota diharapkan <strong>memahami isi proyek</strong>, bukan hanya membaca saat presentasi.</p>
+      </div>
+      <div class="catatan-item">
+        <div class="catatan-num">04</div>
+        <p class="catatan-text">Periksa kembali <strong>semua link</strong> agar dapat berfungsi dengan baik.</p>
+      </div>
+      <div class="catatan-item">
+        <div class="catatan-num">05</div>
+        <p class="catatan-text">Tambahkan <strong>gambar atau video</strong> agar tampilan lebih menarik dan mudah dipahami.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- NILAI TAMBAHAN -->
+  <div id="nilai" class="content-block reveal">
+    <div class="sec-head">
+      <span class="sec-num">08</span>
+      <div>
+        <h2 class="sec-title">🏆 Kriteria Nilai Tambahan</h2>
+        <p class="sec-subtitle">Siswa akan mendapat nilai lebih jika memenuhi kriteria berikut.</p>
+      </div>
+    </div>
+
+    <div class="nilai-grid">
+      <div class="nilai-item">
+        <div class="nilai-icon">🎨</div>
+        <div class="nilai-text">Desain menarik &amp; rapi</div>
+      </div>
+      <div class="nilai-item">
+        <div class="nilai-icon">🎬</div>
+        <div class="nilai-text">Ada video / demo proyek</div>
+      </div>
+      <div class="nilai-item">
+        <div class="nilai-icon">📝</div>
+        <div class="nilai-text">Penjelasan jelas &amp; tidak asal</div>
+      </div>
+      <div class="nilai-item">
+        <div class="nilai-icon">⚡</div>
+        <div class="nilai-text">Website interaktif (ada JavaScript)</div>
+      </div>
+      <div class="nilai-item">
+        <div class="nilai-icon">💡</div>
+        <div class="nilai-text">Kreatif &amp; berbeda dari yang lain</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <strong>ICT FINAL PROJECT — KELAS 9 SMP</strong> &nbsp;·&nbsp; Portofolio Website &nbsp;·&nbsp; Baca semua ketentuan dengan seksama
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
