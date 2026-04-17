@@ -82,13 +82,19 @@
   }
 
   /* ── HERO ── */
-  .hero {
-    background: var(--ink);
-    color: var(--bg);
-    padding: 80px 48px 72px;
-    position: relative;
-    overflow: hidden;
-  }
+ .hero {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 80px 48px 72px;
+  position: relative;
+  overflow: hidden;
+
+  /* TAMBAHAN */
+  min-height: calc(100vh - 58px); /* dikurangi tinggi header */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
   .hero::after {
     content: 'ICT';
@@ -584,20 +590,6 @@
   <div class="hero-kelas">📋 Panduan Tugas Akhir</div>
   <h1 class="hero-title">ICT Final Project<br><em>Kelas 9 SMP</em></h1>
   <p class="hero-desc">Panduan lengkap pembuatan <strong style="color:#f5f4ef">Portofolio Website</strong> sebagai tugas akhir ICT. Baca seluruh ketentuan sebelum memulai.</p>
-  <div class="hero-stats">
-    <div class="stat">
-      <span class="stat-num">5</span>
-      <span class="stat-label">Halaman / Menu</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">3</span>
-      <span class="stat-label">Level Project</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">5</span>
-      <span class="stat-label">Kriteria Nilai Plus</span>
-    </div>
-  </div>
 </section>
 
 <!-- MAIN -->
