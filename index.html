@@ -556,6 +556,153 @@
     transform: none;
   }
 
+  /* ── PRESENTASI ── */
+  .presentasi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+    margin-top: 4px;
+  }
+
+  .presentasi-item {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 22px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .presentasi-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(26,24,20,0.09);
+  }
+
+  .presentasi-icon {
+    font-size: 28px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .presentasi-text {
+    font-size: 14px;
+    color: var(--ink2);
+    line-height: 1.6;
+  }
+
+  .presentasi-text strong {
+    display: block;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink4);
+    font-family: var(--mono);
+    margin-bottom: 4px;
+  }
+
+  /* ── KELOMPOK ── */
+  .kelas-section {
+    margin-bottom: 48px;
+  }
+
+  .kelas-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .kelas-label.kelas-a { background: #fef3c7; color: #92400e; }
+  .kelas-label.kelas-b { background: #fee2e2; color: #991b1b; }
+  .kelas-label.kelas-c { background: #dbeafe; color: #1e40af; }
+  .kelas-label.kelas-e { background: #d1fae5; color: #065f46; }
+  .kelas-label.kelas-f { background: #ede9fe; color: #5b21b6; }
+
+  .kelompok-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+  }
+
+  .kelompok-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .kelompok-card-header {
+    padding: 12px 18px;
+    background: var(--ink);
+    color: var(--bg);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .kelompok-card-header .badge-ketua {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    background: var(--yellow);
+    color: var(--ink);
+    padding: 2px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+  }
+
+  .kelompok-member-list {
+    list-style: none;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .kelompok-member-list li {
+    font-size: 13px;
+    color: var(--ink2);
+    padding: 6px 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .kelompok-member-list li.ketua {
+    background: #fef9c3;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .kelompok-member-list li.ketua::before {
+    content: '★';
+    color: #ca8a04;
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+
+  .kelompok-member-list li:not(.ketua)::before {
+    content: '·';
+    color: var(--ink4);
+    font-size: 16px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 720px) {
     header { padding: 0 20px; }
@@ -582,6 +729,8 @@
     <li><a href="#aboutme">About Me</a></li>
     <li><a href="#catatan">Catatan</a></li>
     <li><a href="#nilai">Penilaian</a></li>
+    <li><a href="#presentasi">Presentasi</a></li>
+    <li><a href="#kelompok">Kelompok</a></li>
   </ul>
 </header>
 
@@ -936,6 +1085,464 @@
         <div class="nilai-text">Kreatif &amp; berbeda dari yang lain</div>
       </div>
     </div>
+  </div>
+
+
+  <hr>
+
+  <!-- KETENTUAN PRESENTASI -->
+  <div id="presentasi" class="content-block reveal">
+    <div class="sec-head">
+      <span class="sec-num">09</span>
+      <div>
+        <h2 class="sec-title">🎤 Ketentuan Presentasi</h2>
+        <p class="sec-subtitle">Baca dan pahami sebelum hari presentasi.</p>
+      </div>
+    </div>
+
+    <div class="presentasi-grid">
+      <div class="presentasi-item">
+        <div class="presentasi-icon">👤</div>
+        <div class="presentasi-text">
+          <strong>Format</strong>
+          Presentasi dilakukan secara <em>individu</em> di depan orang tua sesuai jadwal yang telah ditentukan.
+        </div>
+      </div>
+      <div class="presentasi-item">
+        <div class="presentasi-icon">⏱️</div>
+        <div class="presentasi-text">
+          <strong>Durasi</strong>
+          Waktu presentasi + tanya jawab adalah <strong>10 menit</strong> per siswa. Gunakan waktu seefektif mungkin.
+        </div>
+      </div>
+      <div class="presentasi-item">
+        <div class="presentasi-icon">🕐</div>
+        <div class="presentasi-text">
+          <strong>Kehadiran</strong>
+          Presenter <strong>wajib datang 30 menit</strong> sebelum jadwal presentasi dimulai. Keterlambatan dapat mengurangi nilai.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- KELOMPOK PEMBUATAN PROJEK -->
+  <div id="kelompok" class="content-block reveal">
+    <div class="sec-head">
+      <span class="sec-num">10</span>
+      <div>
+        <h2 class="sec-title">👥 Kelompok Pembuatan Projek</h2>
+        <p class="sec-subtitle">Daftar kelompok per kelas. ★ = Ketua Kelompok</p>
+      </div>
+    </div>
+
+    <!-- KELAS 9A -->
+    <div class="kelas-section">
+      <div class="kelas-label kelas-a">Kelas 9A</div>
+      <div class="kelompok-grid">
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 1</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Abqory Nararya Tyaswa Putra</li>
+            <li>Muhammad Akbar Alifiandra</li>
+            <li>Abyan Rizq Adiguna</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 2</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Briega Afsar Arsenio Abdullah</li>
+            <li>Muhammad Diego Rafa Naufal</li>
+            <li>Muhammad Zakiy Zidane Nurrahman</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 3</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Galang Jalu Massendi</li>
+            <li>Abyan Hadiwijaya</li>
+            <li>Laksita Javas Kayana Arfiansah</li>
+            <li>Rafi Arga Saputra</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 4</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Al Fitto Abdurrahman</li>
+            <li>Ahnaf Zaki Maulana</li>
+            <li>Athaillah Ervino Suyanto Alfirdausi</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 5</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Bimo Mukti Sejati</li>
+            <li>Muhammad Albiruni Djatie</li>
+            <li>Zulfa Zulfigar</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 6</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Hafiz Nealson Putra Denza</li>
+            <li>Sandiaga</li>
+            <li>Indra Winata</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 7</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Attaya Jashenda Nugroho</li>
+            <li>Faiz Jamil Ardhana Putra</li>
+            <li>Muhammad Valent Putra Ardhani</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 8</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Mazaya Zukhruf Dlaifulloh</li>
+            <li>Meganza Fatheo Nitimanta</li>
+            <li>Ahmad Mustofa</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- KELAS 9B -->
+    <div class="kelas-section">
+      <div class="kelas-label kelas-b">Kelas 9B</div>
+      <div class="kelompok-grid">
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 1</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Muhammad Alif Hakim</li>
+            <li>Arden Yudha Damara</li>
+            <li>Altamis Wafiy Ahmad</li>
+            <li>Maulana Fathir Al Bar</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 2</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Fadhil Pradana</li>
+            <li>Muhammad Hanif Syafar</li>
+            <li>Firdaus Rahmat Arnol</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 3</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Asyam Nafi' Mumtazy R</li>
+            <li>Ghavan Candra Perdana</li>
+            <li>Al Ghifariel Prabhaswara</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 4</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Avicena Ramadhan El Rumi</li>
+            <li>Prabu Faiz Azam Permana</li>
+            <li>Mohammad Azka Aflah</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 5</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Dzaka Rizqi Aziyad</li>
+            <li>Akram Seno Adhi</li>
+            <li>Ahmad Nayaka Rif'at Zakaria</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 6</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Musyaffa' Abdurrahman Hammam A</li>
+            <li>Arjuan Nur Ihwan</li>
+            <li>Arya Langit Ramadhan</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 7</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Raysha Arya Satya Naryama Gasa</li>
+            <li>Ahsan Fatihuddin Fawwas Prabowo</li>
+            <li>Rakan Bara Putra Ramadhan</li>
+            <li>Dylan Albin Zaidaan</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 8</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Sawung Dhimas Indra Jati</li>
+            <li>Muhammad Alif Alfurqon</li>
+            <li>Nakhlah Fathan Ghaisan</li>
+            <li>Rayhan Hafiid Abdillah</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 9</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Raihan Zaky Al Faza</li>
+            <li>Danendra Sholahudin Malik</li>
+            <li>Dzaky Farrel Khalfani</li>
+            <li>Nabil Fawwaaz Raihan</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 10</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Aslam Abdurrohman Furqoni</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- KELAS 9C -->
+    <div class="kelas-section">
+      <div class="kelas-label kelas-c">Kelas 9C</div>
+      <div class="kelompok-grid">
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 1</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Yudhistira Abrar Purwono</li>
+            <li>Muzhaffar Faiq Abdillah</li>
+            <li>Alakay Asmaul Fakiha</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 2</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Danish Marcello Alan Aristo</li>
+            <li>Nuh Abdulbar</li>
+            <li>Ferry Setiawan</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 3</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Fatih Andira Putra</li>
+            <li>Arfian Fadli Setiawan</li>
+            <li>Fahreza Rafif Arkana</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 4</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Ibrahim Khalilullah</li>
+            <li>Ghavin Candra Paundra</li>
+            <li>Ivanza Amirul Yusuf</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 5</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Vicky Harlan Aldiansyah</li>
+            <li>Rihalulqalbi Popalia</li>
+            <li>Asyraf Putra Yusra</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 6</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Ahsan Rajendra Wibowo</li>
+            <li>Fathan Aryasatya Wijaya</li>
+            <li>Khalaf Faith Pradyatama</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 7</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Muhammad Rafasya Alvaro Alma</li>
+            <li>Helmy Kotarou Putra Agustiyadi</li>
+            <li>Isnan Arsyad Maulana Hebat</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 8</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Fakhri Ahza Seno Adin</li>
+            <li>Dzacky Hafidz Chandra Alzena</li>
+            <li>Zacky Raditya Perdana</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 9</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Franklin Garrick Rafif Adhiarsa</li>
+            <li>Thomi Eric Rahmadi</li>
+            <li>Muhammad Velino</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 10</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Khairan Attallah Wibowo</li>
+            <li>Muhamad Fadhil Wibowo</li>
+            <li>Khaifat Athaya Wibowo</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- KELAS 9E -->
+    <div class="kelas-section">
+      <div class="kelas-label kelas-e">Kelas 9E</div>
+      <div class="kelompok-grid">
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 1 (Soccer)</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Amelya Nasya Putri lv 9</li>
+            <li>Inas Alfathunnisa Azzahra lv 7</li>
+            <li>Queensha Khalila Ramadhani lv 8</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 2 (Racing)</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Audrey Zhafira Nugroho lv 9</li>
+            <li>Anandita Zahra lv 7</li>
+            <li>Fadhila Amalia lv 8</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 3 (Soccer)</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Magdalena Callista Hillary lv 8</li>
+            <li>Qaishara Humaira lv 7</li>
+            <li>Wahida Nailiya lv 9</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 4 (Racing)</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Shaabriyya Kirani Aamira Rizky lv 9</li>
+            <li>Ashfa Muttaqina lv 7</li>
+            <li>Nayla Annashwa Adhiagsa lv 8</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 5 (Mobil Soccer)</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Asha Reina Ghaisani lv 8</li>
+            <li>Fairuz Nawwar Fauziyah lv 9</li>
+            <li>Nayara Farraisha Silmi lv 7</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 6 (Racing)</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Dinda Fatih Sahira lv 9</li>
+            <li>Athaya Dhany Latifa lv 8</li>
+            <li>Tsaniya Hurin Mukhtar lv 8</li>
+            <li>Radita Azka Justitia lv 7</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- KELAS 9F -->
+    <div class="kelas-section">
+      <div class="kelas-label kelas-f">Kelas 9F</div>
+      <div class="kelompok-grid">
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 1</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Aina Shoumi Latifa</li>
+            <li>Mufidati Aliya Keumala</li>
+            <li>Arsyabilla Putri Allifah</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 2</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Amira Nayla Hafisa</li>
+            <li>Zivana Aurora Bintang Maharani</li>
+            <li>Aisyah Mufidatul Yusra</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 3</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Keysha Bilqis Salsabila</li>
+            <li>Aurora Hardira Daniswara</li>
+            <li>Fidelia Belisya Kurniantoro</li>
+            <li>Niswah Mustaniiroh</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 4</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Nismara Kaniya Setiyono</li>
+            <li>Afifah Khoirunnisa</li>
+            <li>Zivarra Githa Savitri</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 5</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Zahra Nadia Putri</li>
+            <li>Syakira Amalia Farhani</li>
+            <li>Attalea Chelsea Fahira</li>
+            <li>Nafeeza Naya Regina Kusuma</li>
+          </ul>
+        </div>
+
+        <div class="kelompok-card">
+          <div class="kelompok-card-header">Kelompok 6</div>
+          <ul class="kelompok-member-list">
+            <li class="ketua">Azka Felicia Binar Velsignelse</li>
+            <li>Arezti Hanan Hapsari</li>
+            <li>Nabiela Fithria</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 
 </main>
